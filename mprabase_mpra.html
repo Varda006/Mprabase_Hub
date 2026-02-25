@@ -105,7 +105,14 @@ Coloring reflects relative regulatory activity strength within that experiment.
 <tr><td>chromStart</td><td>Start position</td></tr>
 <tr><td>chromEnd</td><td>End position</td></tr>
 <tr><td>name</td><td>Element ID</td></tr>
-<tr><td>score</td><td>Experiment-level scaled score (0–1000) derived from raw activity values for UCSC display compatibility</td></tr>
+<tr>
+<td>score</td>
+<td>
+Scaled score (0–1000) included for UCSC BED format compatibility.
+Score-based shading (useScore) is not enabled for this track.
+Visual display is determined exclusively by the RGB color bins derived from percentile rank.
+</td>
+</tr>
 <tr><td>strand</td><td>Strand</td></tr>
 <tr><td>thickStart</td><td>Thick start (not used)</td></tr>
 <tr><td>thickEnd</td><td>Thick end (not used)</td></tr>
@@ -118,6 +125,12 @@ Coloring reflects relative regulatory activity strength within that experiment.
 <tr><td>organism</td><td>Species</td></tr>
 <tr><td>reference</td><td>Publication reference</td></tr>
 </table>
+
+<p>
+The UCSC score field is present to satisfy BED9 format requirements.
+It does not control track coloring or interpretation.
+All visual encoding is determined by experiment-level percentile binning.
+</p>
 
 <hr>
 
