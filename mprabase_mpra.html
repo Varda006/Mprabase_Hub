@@ -21,7 +21,7 @@
 <p>
 This track displays enhancer elements assayed using Massively Parallel Reporter Assays (MPRA),
 STARR-seq, and related reporter technologies across multiple published studies.
-All genomic coordinates are provided in the GRCh38/hg38 genome assembly.
+All coordinates are provided in the GRCh38/hg38 genome assembly.
 </p>
 
 <hr>
@@ -53,12 +53,12 @@ An experiment is defined as a unique combination of:
 </ul>
 
 <p>
-Percentile ranks are computed independently within each experiment.
+All normalization and ranking procedures are performed independently within each experiment.
 </p>
 
 <hr>
 
-<h2>Percentile Rank Calculation</h2>
+<h2>Score Normalization and Percentile Calculation</h2>
 
 <p>
 For each experiment:
@@ -66,18 +66,14 @@ For each experiment:
 
 <ul>
     <li>Elements are sorted by raw activity score.</li>
-    <li>Percentile rank is computed relative to other elements within the same experiment.</li>
-    <li>This produces a value between <strong>0–100</strong>.</li>
+    <li>A percentile rank (0–100) is computed relative to other elements within the same experiment.</li>
+    <li>A UCSC-compatible scaled score (0–1000) is derived within each experiment to support browser display.</li>
 </ul>
 
 <p>
-Percentile = 0 corresponds to the lowest activity element within an experiment,
-and percentile = 100 corresponds to the highest activity element.
-</p>
-
-<p>
-This normalization ensures comparability within experiments, while avoiding
-cross-experiment scale distortion (e.g., MPRA vs STARR-seq dynamic range differences).
+Both percentile rank and scaled score are calculated independently within each experiment.
+This avoids cross-experiment distortion due to differing assay dynamic ranges
+(e.g., MPRA vs STARR-seq).
 </p>
 
 <hr>
@@ -89,30 +85,14 @@ Elements are colored according to percentile rank within experiment:
 </p>
 
 <ul>
-    <li><span style="color:blue;"><strong>Blue</strong></span>: Percentile &lt; 50 (Lower activity)</li>
-    <li><span style="color:orange;"><strong>Orange</strong></span>: 50 ≤ Percentile &lt; 75 (Intermediate activity)</li>
-    <li><span style="color:red;"><strong>Red</strong></span>: Percentile ≥ 75 (Higher activity)</li>
+    <li><span style="color:blue;"><strong>Blue</strong></span>: Percentile &lt; 50</li>
+    <li><span style="color:orange;"><strong>Orange</strong></span>: 50 ≤ Percentile &lt; 75</li>
+    <li><span style="color:red;"><strong>Red</strong></span>: Percentile ≥ 75</li>
 </ul>
 
 <p>
-Coloring reflects relative regulatory activity strength within each experiment.
-Visualization is controlled by RGB color values stored in the itemRgb field.
-</p>
-
-<hr>
-
-<h2>Scaled Score Field (BED Compatibility)</h2>
-
-<p>
-The UCSC BED <code>score</code> field (integer 0–1000) contains:
-</p>
-
-<p><strong>percentile_rank × 10</strong></p>
-
-<p>
-This field is included for UCSC BED format compatibility.
-Score-based shading (<code>useScore</code>) is not enabled in this track.
-Color visualization is determined exclusively by the RGB color bins described above.
+Color bins are determined using percentile rank within each experiment.
+Coloring reflects relative regulatory activity strength within that experiment.
 </p>
 
 <hr>
@@ -125,7 +105,7 @@ Color visualization is determined exclusively by the RGB color bins described ab
 <tr><td>chromStart</td><td>Start position</td></tr>
 <tr><td>chromEnd</td><td>End position</td></tr>
 <tr><td>name</td><td>Element ID</td></tr>
-<tr><td>score</td><td>Percentile rank × 10 (0–1000 integer)</td></tr>
+<tr><td>score</td><td>Experiment-level scaled score (0–1000) derived from raw activity values for UCSC display compatibility</td></tr>
 <tr><td>strand</td><td>Strand</td></tr>
 <tr><td>thickStart</td><td>Thick start (not used)</td></tr>
 <tr><td>thickEnd</td><td>Thick end (not used)</td></tr>
@@ -152,8 +132,6 @@ Hovering over an element displays:
 </p>
 
 <hr>
-
-<h2>Credits</h2>
 
 <p>
 Track generated and curated by:<br>
