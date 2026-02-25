@@ -104,17 +104,30 @@ Visualization is controlled by RGB color values stored in the itemRgb field.
 <h2>Scaled Score Field (BED Compatibility)</h2>
 
 <p>
-The UCSC BED <code>score</code> field (integer 0–1000) contains:
+The UCSC BED <code>score</code> field (integer 0–1000) contains a 
+<strong>linear scaling of raw activity scores within each experiment</strong>.
 </p>
-
-<p><strong>percentile_rank × 10</strong></p>
 
 <p>
-This field is included for UCSC BED format compatibility.
-Score-based shading (<code>useScore</code>) is not enabled in this track.
-Color visualization is determined exclusively by the RGB color bins described above.
+For each experiment:
 </p>
 
+<ul>
+    <li>Raw activity scores are linearly rescaled to a 0–1000 range.</li>
+    <li>The lowest raw score maps to 0.</li>
+    <li>The highest raw score maps to 1000.</li>
+</ul>
+
+<p>
+This scaling is performed independently within each experiment and is included
+only for UCSC BED format compatibility.
+</p>
+
+<p>
+Score-based shading (<code>useScore</code>) is not enabled in this track.
+Color visualization is determined exclusively by the percentile-based RGB bins described above.
+    
+</p>
 <hr>
 
 <h2>bigBed Field Definitions (bed9 + 7)</h2>
