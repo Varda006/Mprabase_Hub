@@ -1,9 +1,9 @@
-<h2>MPRA Base Enhancer Elements (hg38)</h2>
+<h2>Description</h2>
 
 <p>
 This track displays regulatory elements assayed using Massively Parallel Reporter Assays (MPRA),
 STARR-seq, and related high-throughput reporter technologies across multiple published studies.
-Coordinates shown here correspond to the human GRCh38 (hg38) genome assembly.
+Coordinates correspond to the human GRCh38 (hg38) genome assembly.
 </p>
 
 <hr>
@@ -22,8 +22,10 @@ while preserving experiment-level resolution.
 </p>
 
 <p>
-Lab: <a href="http://64.54.193.71/app/mprabase" target="_blank">Mprabase – Ahituv Lab, UCSF</a><br>
-<!-- Database interface: <a href="https://varda006.github.io/Mprabase_Hub/" target="_blank">MPRA Base</a> -->
+Lab application:
+<a href="http://64.54.193.71/app/mprabase" target="_blank">
+MPRA Base – Ahituv Lab, UCSF
+</a>
 </p>
 
 <hr>
@@ -90,8 +92,13 @@ The same genomic element may appear multiple times if assayed in different exper
 <ul>
 <li>Elements are ranked by raw activity score within each experiment.</li>
 <li>A percentile rank (0–100) is computed independently per experiment.</li>
-<li>A UCSC-compatible scaled score (0–1000) is derived per experiment for bed format compatibility.</li>
+<li>A UCSC-compatible scaled score (0–1000) is derived per experiment for BED format compatibility.</li>
 </ul>
+
+<p>
+All ranking and scaling procedures are performed independently per experiment.
+This avoids cross-study distortion caused by differing assay dynamic ranges.
+</p>
 
 <p>
 The score field is included for UCSC BED compatibility.
