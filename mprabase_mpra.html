@@ -6,10 +6,6 @@ STARR-seq, and related high-throughput reporter technologies across multiple pub
 Coordinates correspond to the human GRCh38 (hg38) genome assembly.
 </p>
 
-<hr>
-
-<h3>About MPRA Base</h3>
-
 <p>
 MPRA Base is a curated database of experimentally tested cis-regulatory elements
 measured using high-throughput reporter assays. These assays quantify enhancer
@@ -30,7 +26,52 @@ MPRA Base – Ahituv Lab, UCSF
 
 <hr>
 
-<h3>Database Overview</h3>
+<h2>Display Conventions and Configuration</h2>
+
+<p>
+Each row represents a regulatory element tested within a specific experiment.
+An experiment is defined by:
+</p>
+
+<ul>
+<li>Cell line or tissue</li>
+<li>Assay type</li>
+<li>Publication (PMID)</li>
+</ul>
+
+<p>
+The same genomic element may appear multiple times if assayed in different experiments.
+</p>
+
+<ul>
+<li><span style="color:blue;"><b>Blue</b></span> – Percentile &lt; 50</li>
+<li><span style="color:orange;"><b>Orange</b></span> – Percentile 50–74</li>
+<li><span style="color:red;"><b>Red</b></span> – Percentile ≥ 75</li>
+</ul>
+
+<p>
+Score-based shading is not enabled in this track.
+Display color is determined exclusively by percentile-based RGB bins.
+</p>
+
+<hr>
+
+<h2>Methods</h2>
+
+<ul>
+<li>Elements are ranked by raw activity score within each experiment.</li>
+<li>A percentile rank (0–100) is computed independently per experiment.</li>
+<li>A UCSC-compatible scaled score (0–1000) is derived per experiment for BED format compatibility.</li>
+</ul>
+
+<p>
+All ranking and scaling procedures are performed independently per experiment.
+This avoids cross-study distortion caused by differing assay dynamic ranges.
+</p>
+
+<hr>
+
+<h2>Database Overview</h2>
 
 <p><b>Species represented:</b></p>
 <ul>
@@ -68,58 +109,19 @@ MPRA Base – Ahituv Lab, UCSF
 
 <hr>
 
-<h3>Track Structure</h3>
-
-<p>
-Each row represents a regulatory element tested within a specific experiment.
-An experiment is defined by:
-</p>
-
-<ul>
-<li>Cell line or tissue</li>
-<li>Assay type</li>
-<li>Publication (PMID)</li>
-</ul>
-
-<p>
-The same genomic element may appear multiple times if assayed in different experiments.
-</p>
-
-<hr>
-
-<h3>Score Normalization</h3>
-
-<ul>
-<li>Elements are ranked by raw activity score within each experiment.</li>
-<li>A percentile rank (0–100) is computed independently per experiment.</li>
-<li>A UCSC-compatible scaled score (0–1000) is derived per experiment for BED format compatibility.</li>
-</ul>
-
-<p>
-All ranking and scaling procedures are performed independently per experiment.
-This avoids cross-study distortion caused by differing assay dynamic ranges.
-</p>
-
-<p>
-The score field is included for UCSC BED compatibility.
-Score-based shading is not enabled in this track.
-Display color is determined exclusively by percentile-based RGB bins.
-</p>
-
-<hr>
-
-<h3>Color Coding</h3>
-
-<ul>
-<li><span style="color:blue;"><b>Blue</b></span> – Percentile &lt; 50</li>
-<li><span style="color:orange;"><b>Orange</b></span> – Percentile 50–74</li>
-<li><span style="color:red;"><b>Red</b></span> – Percentile ≥ 75</li>
-</ul>
-
-<hr>
+<h2>Credits</h2>
 
 <p>
 Track curated by Varda Singhal, University of California, San Francisco.
 For inquiries:
 <a href="mailto:varda.singhal@ucsf.edu">varda.singhal@ucsf.edu</a>
+</p>
+
+<hr>
+
+<h2>References</h2>
+
+<p>
+MPRA Base integrates data from multiple published MPRA and STARR-seq studies.
+Individual publications are accessible through the PMID field associated with each track entry.
 </p>
