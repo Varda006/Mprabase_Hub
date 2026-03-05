@@ -1,36 +1,37 @@
 <h2>Description</h2>
 
 <p>
-This track displays regulatory elements assayed using Massively Parallel Reporter Assays (MPRA),
-STARR-seq, and related high-throughput reporter technologies across multiple published studies.
-Coordinates correspond to the human GRCh38 (hg38) genome assembly.
+This track displays regulatory elements assayed using Massively Parallel Reporter Assays (MPRA), STARR-seq, and related high-throughput reporter technologies across multiple published studies. Coordinates correspond to the human GRCh38 (hg38) genome assembly.
 </p>
 
 <p>
-MPRA Base is a curated database of experimentally tested cis-regulatory elements
-measured using high-throughput reporter assays. These assays quantify enhancer
-activity by testing thousands of candidate sequences in parallel.
+Massively Parallel Reporter Assays (MPRAs) enable quantitative testing of thousands of candidate regulatory DNA sequences in parallel by linking each sequence to a reporter gene and measuring transcriptional output using sequencing. These assays are widely used to identify and characterize enhancer activity across cell types and experimental conditions.
 </p>
 
 <p>
-The database integrates multiple assay platforms, species, and cell types,
-while preserving experiment-level resolution.
+<b>MPRA Base</b> is a curated database of experimentally tested cis-regulatory elements derived from MPRA and related reporter assays. The database integrates datasets from multiple studies, assay platforms, and biological systems while preserving experiment-level resolution.
 </p>
 
 <p>
-Lab application:
+MPRA Base application:
 <a href="http://64.54.193.71/app/mprabase" target="_blank">
-MPRA Base – Ahituv Lab, UCSF
+http://64.54.193.71/app/mprabase
 </a>
 </p>
 
-<hr>
+<p>
+Project developed in the
+<a href="https://ahituv.ucsf.edu/" target="_blank">
+Ahituv Lab, University of California San Francisco
+</a>.
+</p>
 
-<h2>Display Conventions and Configuration</h2>
+
+<h2>Display Conventions</h2>
 
 <p>
-Each row represents a regulatory element tested within a specific experiment.
-An experiment is defined by:
+Each row represents a regulatory element tested in a specific MPRA experiment.  
+An experiment is defined by the combination of:
 </p>
 
 <ul>
@@ -40,7 +41,11 @@ An experiment is defined by:
 </ul>
 
 <p>
-The same genomic element may appear multiple times if assayed in different experiments.
+The same genomic region may appear multiple times if it was tested in different experiments (for example different cell types, assay platforms, or publications). Multiple entries may also occur within a single experiment when the same sequence is measured using multiple barcodes, replicates, or overlapping tiles.
+</p>
+
+<p>
+Track colors indicate percentile rank within each experiment:
 </p>
 
 <ul>
@@ -50,78 +55,64 @@ The same genomic element may appear multiple times if assayed in different exper
 </ul>
 
 <p>
-Score-based shading is not enabled in this track.
-Display color is determined exclusively by percentile-based RGB bins.
+Display color is determined by percentile-based RGB bins. Score-based shading is not used.
 </p>
 
-<hr>
 
 <h2>Methods</h2>
 
-<ul>
-<li>Elements are ranked by raw activity score within each experiment.</li>
-<li>A percentile rank (0–100) is computed independently per experiment.</li>
-<li>A UCSC-compatible scaled score (0–1000) is derived per experiment for BED format compatibility.</li>
-</ul>
-
 <p>
-All ranking and scaling procedures are performed independently per experiment.
-This avoids cross-study distortion caused by differing assay dynamic ranges.
+Elements are ranked by raw activity score within each experiment. A percentile rank (0–100) is computed independently for each experiment. A UCSC-compatible scaled score (0–1000) is derived per experiment for BED format compatibility.
 </p>
 
-<hr>
+<p>
+All ranking and scaling procedures are performed independently per experiment in order to avoid cross-study distortions caused by differing assay dynamic ranges.
+</p>
+
 
 <h2>Database Overview</h2>
 
-<p><b>Species represented:</b></p>
-<ul>
-<li>Homo sapiens (67 studies)</li>
-<li>Mus musculus (34 studies)</li>
-<li>Drosophila melanogaster (3 studies)</li>
-<li>Escherichia coli (1 study)</li>
-</ul>
+<table border="1" cellpadding="4">
+<tr><th>Species</th><th>Number of studies</th></tr>
+<tr><td>Homo sapiens</td><td>67</td></tr>
+<tr><td>Mus musculus</td><td>34</td></tr>
+<tr><td>Drosophila melanogaster</td><td>3</td></tr>
+<tr><td>Escherichia coli</td><td>1</td></tr>
+</table>
 
-<p><b>Assay types:</b></p>
-<ul>
-<li>plasmidMPRA (56)</li>
-<li>lentiMPRA (19)</li>
-<li>STARR-seq (17)</li>
-<li>CRE-seq (5)</li>
-<li>HiDRA (1)</li>
-<li>PTRE-seq (2)</li>
-<li>SLOT (1)</li>
-<li>CapStarr-seq (2)</li>
-<li>AAV-MPRA (2)</li>
-</ul>
+<br>
 
-<p><b>Common human cell types include:</b></p>
-<ul>
-<li>HepG2</li>
-<li>HEK293 / HEK293FT / HEK293T</li>
-<li>K562</li>
-<li>hESC / H1 hESC</li>
-<li>NPC</li>
-<li>HeLa</li>
-<li>GM12878</li>
-<li>UACC903</li>
-<li>and others</li>
-</ul>
+<table border="1" cellpadding="4">
+<tr><th>Assay type</th><th>Studies</th></tr>
+<tr><td>plasmidMPRA</td><td>56</td></tr>
+<tr><td>lentiMPRA</td><td>19</td></tr>
+<tr><td>STARR-seq</td><td>17</td></tr>
+<tr><td>CRE-seq</td><td>5</td></tr>
+<tr><td>HiDRA</td><td>1</td></tr>
+<tr><td>PTRE-seq</td><td>2</td></tr>
+<tr><td>SLOT</td><td>1</td></tr>
+<tr><td>CapStarr-seq</td><td>2</td></tr>
+<tr><td>AAV-MPRA</td><td>2</td></tr>
+</table>
 
-<hr>
+<p>
+Common human cell types represented include HepG2, HEK293/HEK293FT/HEK293T, K562, H1 hESC, NPC, HeLa, GM12878, and UACC903.
+</p>
+
 
 <h2>Credits</h2>
 
 <p>
-Track curated by Varda Singhal, University of California, San Francisco.
-For inquiries:
-<a href="mailto:varda.singhal@ucsf.edu">varda.singhal@ucsf.edu</a>
+Track curated by <b>Varda Singhal</b>, University of California San Francisco.
 </p>
 
-<hr>
+<p>
+Contact: varda.singhal@ucsf.edu
+</p>
+
 
 <h2>References</h2>
 
 <p>
-MPRA Base integrates data from multiple published MPRA and STARR-seq studies.
-Individual publications are accessible through the PMID field associated with each track entry.
+MPRA Base integrates regulatory element data from multiple published MPRA and STARR-seq studies. Individual publications can be accessed through the PMID field associated with each track entry.
 </p>
