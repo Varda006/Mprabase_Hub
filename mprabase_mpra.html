@@ -13,21 +13,21 @@ Massively Parallel Reporter Assays (MPRAs) enable quantitative testing of thousa
 </p>
 
 <p>
-MPRA Base application:
+MPRA Base application: 
 <a href="http://64.54.193.71/app/mprabase" target="_blank">
 http://64.54.193.71/app/mprabase
 </a>
 </p>
 
 <p>
-For additional information about the MPRA Base database see:
+For additional information about the MPRA Base database see: 
 <a href="https://pubmed.ncbi.nlm.nih.gov/38045264/" target="_blank">
 MPRAbase: A Massively Parallel Reporter Assay Database
 </a>.
 </p>
 
 <p>
-Database developed in the
+Database developed in the 
 <a href="https://pharm.ucsf.edu/ahituv" target="_blank">
 Ahituv Lab, University of California San Francisco
 </a>.
@@ -37,7 +37,7 @@ Ahituv Lab, University of California San Francisco
 <h2>Display Conventions</h2>
 
 <p>
-Each row represents a regulatory element tested in a specific MPRA experiment.  
+Each row represents a <b>genomic fragment</b> tested in a specific MPRA experiment.
 An experiment is defined by the combination of:
 </p>
 
@@ -49,6 +49,10 @@ An experiment is defined by the combination of:
 
 <p>
 The same genomic region may appear multiple times if it was tested in different experiments (for example different cell types, assay platforms, or publications). Multiple entries may also occur within a single experiment when the same sequence is measured using multiple technical replicates or overlapping tiles.
+</p>
+
+<p>
+In some studies, candidate enhancers were tested using multiple overlapping fragments or reporter constructs of different lengths. As a result, the number of genomic elements represented in the database may exceed the number of candidate enhancers described in the original publication.
 </p>
 
 <p>
@@ -69,11 +73,11 @@ Display color is determined by percentile-based RGB bins. Score-based shading is
 <h2>Methods</h2>
 
 <p>
-Within each experiment, regulatory elements may be measured multiple times through technical replicates or overlapping reporter constructs. To obtain a stable estimate of enhancer activity, replicate measurements corresponding to the same genomic element within the same experiment were aggregated by computing the <b>mean raw activity score</b>.
+Within each experiment, genomic fragments may be measured multiple times through technical replicates or overlapping reporter constructs. To obtain a stable estimate of enhancer activity, replicate measurements corresponding to the same genomic fragment within the same experiment were aggregated by computing the mean raw activity score.
 </p>
 
 <p>
-The original dataset contained <b>211,053 replicate-level measurements</b>. After aggregation of replicate observations corresponding to the same genomic element within an experiment, the final database contains <b>41,275 unique experiment-level regulatory elements</b>.
+The original dataset contained <b>211,053 replicate-level measurements</b>. After aggregation of replicate observations corresponding to the same genomic fragment within an experiment, the final database contains <b>41,275 unique experiment-level genomic elements</b>.
 </p>
 
 <p>
@@ -92,17 +96,42 @@ All ranking procedures are performed independently per experiment to avoid cross
 <h2>Database Overview</h2>
 
 <table border="1" cellpadding="4">
-<tr><th>Species</th><th>Number of studies</th></tr>
-<tr><td>Homo sapiens</td><td>67</td></tr>
-<tr><td>Mus musculus</td><td>34</td></tr>
-<tr><td>Drosophila melanogaster</td><td>3</td></tr>
-<tr><td>Escherichia coli</td><td>1</td></tr>
+<tr>
+<th>Species</th>
+<th>Number of studies</th>
+</tr>
+
+<tr>
+<td>Homo sapiens</td>
+<td>67</td>
+</tr>
+
+<tr>
+<td>Mus musculus</td>
+<td>34</td>
+</tr>
+
+<tr>
+<td>Drosophila melanogaster</td>
+<td>3</td>
+</tr>
+
+<tr>
+<td>Escherichia coli</td>
+<td>1</td>
+</tr>
+
 </table>
 
 <br>
 
 <table border="1" cellpadding="4">
-<tr><th>Assay type</th><th>Studies</th></tr>
+
+<tr>
+<th>Assay type</th>
+<th>Studies</th>
+</tr>
+
 <tr><td>plasmidMPRA</td><td>56</td></tr>
 <tr><td>lentiMPRA</td><td>19</td></tr>
 <tr><td>STARR-seq</td><td>17</td></tr>
@@ -112,6 +141,7 @@ All ranking procedures are performed independently per experiment to avoid cross
 <tr><td>SLOT</td><td>1</td></tr>
 <tr><td>CapStarr-seq</td><td>2</td></tr>
 <tr><td>AAV-MPRA</td><td>2</td></tr>
+
 </table>
 
 <p>
@@ -119,9 +149,14 @@ Common human cell types represented include HepG2, HEK293/HEK293FT/HEK293T, K562
 </p>
 
 
-<h3>Experiments Represented in MPRA Base</h3>
+<h2>Experiments Represented in MPRA Base</h2>
+
+<p>
+The table below summarizes experiments currently represented in MPRA Base. An experiment is defined as a unique combination of publication (PMID), cell type, and assay platform.
+</p>
 
 <table border="1" cellpadding="4">
+
 <tr>
 <th>Publication (PMID)</th>
 <th>Lab</th>
@@ -130,85 +165,16 @@ Common human cell types represented include HepG2, HEK293/HEK293FT/HEK293T, K562
 <th>Elements</th>
 </tr>
 
-<tr>
-<td>27831498</td>
-<td>Shendure Lab</td>
-<td>HepG2</td>
-<td>lentiMPRA_(LM)</td>
-<td>2241</td>
-</tr>
-
-<tr>
-<td>30045748</td>
-<td>Shendure Lab</td>
-<td>HepG2</td>
-<td>STARR-seq_(ST)</td>
-<td>7064</td>
-</tr>
-
-<tr>
-<td>32483191</td>
-<td>Brown Lab</td>
-<td>HEK293FT</td>
-<td>lentiMPRA_(LM)</td>
-<td>840</td>
-</tr>
-
-<tr>
-<td>32483191</td>
-<td>Brown Lab</td>
-<td>UACC903</td>
-<td>lentiMPRA_(LM)</td>
-<td>840</td>
-</tr>
-
-<tr>
-<td>32819422</td>
-<td>Mele Lab</td>
-<td>HUES64</td>
-<td>plasmidMPRA_(PM)</td>
-<td>6954</td>
-</tr>
-
-<tr>
-<td>32819422</td>
-<td>Mele Lab</td>
-<td>mESC</td>
-<td>plasmidMPRA_(PM)</td>
-<td>6954</td>
-</tr>
-
-<tr>
-<td>33046894</td>
-<td>Shendure Lab</td>
-<td>HepG2</td>
-<td>lentiMPRA_(LM)</td>
-<td>8116</td>
-</tr>
-
-<tr>
-<td>33046894</td>
-<td>Shendure Lab</td>
-<td>HepG2</td>
-<td>plasmidMPRA_(PM)</td>
-<td>2228</td>
-</tr>
-
-<tr>
-<td>33046894</td>
-<td>Shendure Lab</td>
-<td>HepG2</td>
-<td>STARR-seq_(ST)</td>
-<td>2230</td>
-</tr>
-
-<tr>
-<td>36834916</td>
-<td>Kreimer Lab</td>
-<td>NPC</td>
-<td>lentiMPRA_(LM)</td>
-<td>3807</td>
-</tr>
+<tr><td>27831498</td><td>Shendure Lab</td><td>HepG2</td><td>lentiMPRA_(LM)</td><td>2241</td></tr>
+<tr><td>30045748</td><td>Shendure Lab</td><td>HepG2</td><td>STARR-seq_(ST)</td><td>7064</td></tr>
+<tr><td>32483191</td><td>Brown Lab</td><td>HEK293FT</td><td>lentiMPRA_(LM)</td><td>840</td></tr>
+<tr><td>32483191</td><td>Brown Lab</td><td>UACC903</td><td>lentiMPRA_(LM)</td><td>840</td></tr>
+<tr><td>32819422</td><td>Mele Lab</td><td>HUES64</td><td>plasmidMPRA_(PM)</td><td>6954</td></tr>
+<tr><td>32819422</td><td>Mele Lab</td><td>mESC</td><td>plasmidMPRA_(PM)</td><td>6954</td></tr>
+<tr><td>33046894</td><td>Shendure Lab</td><td>HepG2</td><td>lentiMPRA_(LM)</td><td>8116</td></tr>
+<tr><td>33046894</td><td>Shendure Lab</td><td>HepG2</td><td>plasmidMPRA_(PM)</td><td>2228</td></tr>
+<tr><td>33046894</td><td>Shendure Lab</td><td>HepG2</td><td>STARR-seq_(ST)</td><td>2230</td></tr>
+<tr><td>36834916</td><td>Kreimer Lab</td><td>NPC</td><td>lentiMPRA_(LM)</td><td>3807</td></tr>
 
 </table>
 
