@@ -20,6 +20,13 @@ http://64.54.193.71/app/mprabase
 </p>
 
 <p>
+For additional information about the MPRA Base database see:
+<a href="https://pubmed.ncbi.nlm.nih.gov/38045264/" target="_blank">
+MPRAbase: A Massively Parallel Reporter Assay Database
+</a>.
+</p>
+
+<p>
 Database developed in the
 <a href="https://pharm.ucsf.edu/ahituv" target="_blank">
 Ahituv Lab, University of California San Francisco
@@ -41,7 +48,7 @@ An experiment is defined by the combination of:
 </ul>
 
 <p>
-The same genomic region may appear multiple times if it was tested in different experiments (for example different cell types, assay platforms, or publications). Multiple entries may also occur within a single experiment when the same sequence is measured using multiple barcodes, replicates, or overlapping tiles.
+The same genomic region may appear multiple times if it was tested in different experiments (for example different cell types, assay platforms, or publications). Multiple entries may also occur within a single experiment when the same sequence is measured using multiple technical replicates or overlapping tiles.
 </p>
 
 <p>
@@ -58,10 +65,15 @@ Track colors indicate percentile rank within each experiment:
 Display color is determined by percentile-based RGB bins. Score-based shading is not used.
 </p>
 
+
 <h2>Methods</h2>
 
 <p>
-Within each experiment, regulatory elements may be measured multiple times through technical replicates or overlapping reporter constructs. To obtain a stable estimate of enhancer activity, replicate measurements corresponding to the same genomic element are aggregated by computing the <b>mean raw activity score</b>.
+Within each experiment, regulatory elements may be measured multiple times through technical replicates or overlapping reporter constructs. To obtain a stable estimate of enhancer activity, replicate measurements corresponding to the same genomic element within the same experiment were aggregated by computing the <b>mean raw activity score</b>.
+</p>
+
+<p>
+The original dataset contained <b>211,053 replicate-level measurements</b>. After aggregation of replicate observations corresponding to the same genomic element within an experiment, the final database contains <b>41,275 unique experiment-level regulatory elements</b>.
 </p>
 
 <p>
@@ -107,63 +119,95 @@ Common human cell types represented include HepG2, HEK293/HEK293FT/HEK293T, K562
 </p>
 
 
-<h3>Publications Included in MPRA Base</h3>
+<h3>Experiments Represented in MPRA Base</h3>
 
 <table border="1" cellpadding="4">
 <tr>
 <th>Publication (PMID)</th>
 <th>Lab</th>
-<th>Experiments</th>
+<th>Cell type</th>
+<th>Assay</th>
 <th>Elements</th>
-</tr>
-
-<tr>
-<td>32819422</td>
-<td>Mele Lab</td>
-<td>2</td>
-<td>13908</td>
-</tr>
-
-<tr>
-<td>33046894</td>
-<td>Shendure Lab</td>
-<td>3</td>
-<td>12574</td>
-</tr>
-
-<tr>
-<td>30045748</td>
-<td>Shendure Lab</td>
-<td>1</td>
-<td>7064</td>
-</tr>
-
-<tr>
-<td>36834916</td>
-<td>Kreimer Lab</td>
-<td>1</td>
-<td>3807</td>
 </tr>
 
 <tr>
 <td>27831498</td>
 <td>Shendure Lab</td>
-<td>1</td>
+<td>HepG2</td>
+<td>lentiMPRA_(LM)</td>
 <td>2241</td>
+</tr>
+
+<tr>
+<td>30045748</td>
+<td>Shendure Lab</td>
+<td>HepG2</td>
+<td>STARR-seq_(ST)</td>
+<td>7064</td>
 </tr>
 
 <tr>
 <td>32483191</td>
 <td>Brown Lab</td>
-<td>2</td>
-<td>1680</td>
+<td>HEK293FT</td>
+<td>lentiMPRA_(LM)</td>
+<td>840</td>
 </tr>
 
 <tr>
-<td>23328393</td>
-<td>Stark Lab</td>
-<td>1</td>
-<td>1</td>
+<td>32483191</td>
+<td>Brown Lab</td>
+<td>UACC903</td>
+<td>lentiMPRA_(LM)</td>
+<td>840</td>
+</tr>
+
+<tr>
+<td>32819422</td>
+<td>Mele Lab</td>
+<td>HUES64</td>
+<td>plasmidMPRA_(PM)</td>
+<td>6954</td>
+</tr>
+
+<tr>
+<td>32819422</td>
+<td>Mele Lab</td>
+<td>mESC</td>
+<td>plasmidMPRA_(PM)</td>
+<td>6954</td>
+</tr>
+
+<tr>
+<td>33046894</td>
+<td>Shendure Lab</td>
+<td>HepG2</td>
+<td>STARR-seq_(ST)</td>
+<td>2230</td>
+</tr>
+
+<tr>
+<td>33046894</td>
+<td>Shendure Lab</td>
+<td>HepG2</td>
+<td>lentiMPRA_(LM)</td>
+<td>8116</td>
+</tr>
+
+<tr>
+<td>33046894</td>
+<td>Shendure Lab</td>
+<td>HepG2</td>
+<td>plasmidMPRA_(PM)</td>
+<td>2228</td>
+</tr>
+
+<tr>
+<td>36834916</td>
+<td>Kreimer Lab</td>
+<td>NPC</td>
+<td>lentiMPRA_(LM)</td>
+<td>3807</td>
 </tr>
 
 </table>
