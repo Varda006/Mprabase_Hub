@@ -58,11 +58,18 @@ Track colors indicate percentile rank within each experiment:
 Display color is determined by percentile-based RGB bins. Score-based shading is not used.
 </p>
 
-
 <h2>Methods</h2>
 
 <p>
-Elements are ranked by raw activity score within each experiment. A percentile rank (0–100) is computed independently for each experiment.
+Within each experiment, regulatory elements may be measured multiple times through technical replicates or overlapping reporter constructs. To obtain a stable estimate of enhancer activity, replicate measurements corresponding to the same genomic element are aggregated by computing the <b>mean raw activity score</b>.
+</p>
+
+<p>
+Analysis of replicate measurements across experiments showed low variance in activity scores, indicating strong agreement between replicate measurements. Because of this low variability, the mean raw activity score provides a robust representation of enhancer activity for each tested element.
+</p>
+
+<p>
+Elements are ranked by mean raw activity score within each experiment. A percentile rank (0–100) is computed independently for each experiment.
 </p>
 
 <p>
@@ -98,6 +105,68 @@ All ranking procedures are performed independently per experiment to avoid cross
 <p>
 Common human cell types represented include HepG2, HEK293/HEK293FT/HEK293T, K562, H1 hESC, NPC, HeLa, GM12878, and UACC903.
 </p>
+
+
+<h3>Publications Included in MPRA Base</h3>
+
+<table border="1" cellpadding="4">
+<tr>
+<th>Publication (PMID)</th>
+<th>Lab</th>
+<th>Experiments</th>
+<th>Elements</th>
+</tr>
+
+<tr>
+<td>32819422</td>
+<td>Mele Lab</td>
+<td>2</td>
+<td>13908</td>
+</tr>
+
+<tr>
+<td>33046894</td>
+<td>Shendure Lab</td>
+<td>3</td>
+<td>12574</td>
+</tr>
+
+<tr>
+<td>30045748</td>
+<td>Shendure Lab</td>
+<td>1</td>
+<td>7064</td>
+</tr>
+
+<tr>
+<td>36834916</td>
+<td>Kreimer Lab</td>
+<td>1</td>
+<td>3807</td>
+</tr>
+
+<tr>
+<td>27831498</td>
+<td>Shendure Lab</td>
+<td>1</td>
+<td>2241</td>
+</tr>
+
+<tr>
+<td>32483191</td>
+<td>Brown Lab</td>
+<td>2</td>
+<td>1680</td>
+</tr>
+
+<tr>
+<td>23328393</td>
+<td>Stark Lab</td>
+<td>1</td>
+<td>1</td>
+</tr>
+
+</table>
 
 
 <h2>Credits</h2>
