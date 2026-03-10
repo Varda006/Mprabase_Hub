@@ -33,11 +33,10 @@ Database developed in the
 </a>.
 </p>
 
-
 <h2>Display Conventions</h2>
 
 <p>
-The same genomic region may appear multiple times if it was tested in <b>different experiments</b> (for example <b>different cell types, assay platforms, or publications</b>). In addition, some studies tested <b>overlapping genomic fragments or constructs of different lengths</b>, which may appear as separate elements in the database when they map to <b>distinct genomic coordinates</b>.
+An <b>experiment</b> in MPRA Base is defined as a unique combination of:
 </p>
 
 <ul>
@@ -47,11 +46,15 @@ The same genomic region may appear multiple times if it was tested in <b>differe
 </ul>
 
 <p>
-In some studies, candidate enhancers were tested using <b>multiple overlapping fragments</b> or <b>reporter constructs of different lengths</b>. As a result, the <b>number of genomic elements represented in the database may exceed the number of candidate enhancers described in the original publication</b>.
+Each row in the track represents a <b>genomic fragment tested within a specific experiment</b>.
 </p>
 
 <p>
-<b>Track colors indicate percentile rank within each experiment:</b>
+The same genomic region may appear multiple times if it was tested in <b>different experiments</b> (for example different cell types, assay platforms, or publications).
+</p>
+
+<p>
+Track colors indicate <b>percentile rank of the mean raw activity score within each experiment</b>.
 </p>
 
 <ul>
@@ -61,9 +64,8 @@ In some studies, candidate enhancers were tested using <b>multiple overlapping f
 </ul>
 
 <p>
-Display color is determined by <b>percentile-based RGB bins</b>. Score-based shading is not used.
+Displa color is determined by percentile-based RGB bins. Score-based shading is not used.
 </p>
-
 
 <h2>Methods</h2>
 
@@ -172,7 +174,9 @@ The table below summarizes <b>experiments currently represented in MPRA Base</b>
 <tr><td><b>36834916</b></td><td>Kreimer Lab</td><td>NPC</td><td>lentiMPRA_(LM)</td><td><b>3807</b></td></tr>
 
 </table>
-
+<p>
+In some studies, candidate enhancers were tested using multiple overlapping genomic fragments or reporter constructs of different lengths. As a result, the number of genomic elements represented in the database may exceed the number of candidate enhancers described in the original publication.
+</p>
 
 <h2>Credits</h2>
 
