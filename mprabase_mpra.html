@@ -13,17 +13,21 @@ This track displays <b>regulatory elements assayed using Massively Parallel Repo
 </p>
 
 <p>
-<b>MPRA Base application:</b> 
-<a href="http://64.54.193.71/app/mprabase" target="_blank">
-http://64.54.193.71/app/mprabase
+Many MPRA studies test <b>synthetic regulatory sequences or designed oligonucleotide libraries</b> that do not correspond to a unique genomic location. Because genome browser tracks require genomic coordinates, <b>MPRA Base only includes elements derived from genomic fragments that can be mapped to the reference genome</b>. As a result, some MPRA publications may not appear in this browser track if their experiments were performed exclusively on <b>synthetic libraries without genomic coordinates</b>.
+</p>
+
+<p>
+<b>MPRA Base application:</b><br>
+<a href="http://mprabase.ucsf.edu/app/mprabase" target="_blank">
+http://mprabase.ucsf.edu/app/mprabase
 </a>
 </p>
 
 <p>
-For additional information about the MPRA Base database see: 
+For additional information about the MPRA Base database see:<br>
 <a href="https://pubmed.ncbi.nlm.nih.gov/38045264/" target="_blank">
 <b>MPRAbase: A Massively Parallel Reporter Assay Database</b>
-</a>.
+</a>
 </p>
 
 <p>
@@ -32,6 +36,7 @@ Database developed in the
 <b>Ahituv Lab, University of California San Francisco</b>
 </a>.
 </p>
+
 
 <h2>Display Conventions</h2>
 
@@ -64,13 +69,18 @@ Track colors indicate <b>percentile rank of the mean raw activity score within e
 </ul>
 
 <p>
-Displa color is determined by percentile-based RGB bins. Score-based shading is not used.
+Display color is determined by <b>percentile-based RGB bins</b>. Score-based shading is not used.
 </p>
+
 
 <h2>Methods</h2>
 
 <p>
-Within each experiment, genomic fragments may be measured multiple times through <b>technical replicates</b> or <b>overlapping reporter constructs</b>. To obtain a stable estimate of enhancer activity, replicate measurements corresponding to the same genomic fragment within the same experiment were aggregated by computing the <b>mean raw activity score</b>.
+Within each experiment, genomic fragments may be measured multiple times through <b>technical replicates</b> or <b>overlapping reporter constructs</b>. To obtain a stable estimate of enhancer activity, replicate measurements corresponding to the same genomic fragment within each experiment were aggregated by computing the <b>mean raw activity score</b>.
+</p>
+
+<p>
+To provide additional information about replicate variability without displaying all replicate measurements, the <b>minimum and maximum replicate activity scores</b> are also recorded and displayed in the browser tooltip.
 </p>
 
 <p>
@@ -93,30 +103,16 @@ All ranking procedures are performed <b>independently per experiment</b> to avoi
 <h2>Database Overview</h2>
 
 <table border="1" cellpadding="4">
+
 <tr>
 <th>Species</th>
 <th>Number of studies</th>
 </tr>
 
-<tr>
-<td>Homo sapiens</td>
-<td><b>67</b></td>
-</tr>
-
-<tr>
-<td>Mus musculus</td>
-<td><b>34</b></td>
-</tr>
-
-<tr>
-<td>Drosophila melanogaster</td>
-<td><b>3</b></td>
-</tr>
-
-<tr>
-<td>Escherichia coli</td>
-<td><b>1</b></td>
-</tr>
+<tr><td>Homo sapiens</td><td><b>67</b></td></tr>
+<tr><td>Mus musculus</td><td><b>34</b></td></tr>
+<tr><td>Drosophila melanogaster</td><td><b>3</b></td></tr>
+<tr><td>Escherichia coli</td><td><b>1</b></td></tr>
 
 </table>
 
@@ -136,7 +132,7 @@ All ranking procedures are performed <b>independently per experiment</b> to avoi
 <tr><td>HiDRA</td><td><b>1</b></td></tr>
 <tr><td>PTRE-seq</td><td><b>2</b></td></tr>
 <tr><td>SLOT</td><td><b>1</b></td></tr>
-<tr><td>CapStarr-seq</td><td><b>2</b></td></tr>
+<tr><td>CapSTARR-seq</td><td><b>2</b></td></tr>
 <tr><td>AAV-MPRA</td><td><b>2</b></td></tr>
 
 </table>
@@ -148,35 +144,31 @@ Common human cell types represented include <b>HepG2, HEK293/HEK293FT/HEK293T, K
 
 <h2>Experiments Represented in MPRA Base</h2>
 
-<p>
-The table below summarizes <b>experiments currently represented in MPRA Base</b>. An experiment is defined as a <b>unique combination of publication (PMID), cell type, and assay platform</b>.
-</p>
-
 <table border="1" cellpadding="4">
 
 <tr>
-<th>Publication (PMID)</th>
+<th>PMID</th>
+<th>Author</th>
+<th>Year</th>
 <th>Lab</th>
 <th>Cell type</th>
 <th>Assay</th>
 <th>Elements</th>
 </tr>
 
-<tr><td><b>27831498</b></td><td>Shendure Lab</td><td>HepG2</td><td>lentiMPRA_(LM)</td><td><b>2241</b></td></tr>
-<tr><td><b>30045748</b></td><td>Shendure Lab</td><td>HepG2</td><td>STARR-seq_(ST)</td><td><b>7064</b></td></tr>
-<tr><td><b>32483191</b></td><td>Brown Lab</td><td>HEK293FT</td><td>lentiMPRA_(LM)</td><td><b>840</b></td></tr>
-<tr><td><b>32483191</b></td><td>Brown Lab</td><td>UACC903</td><td>lentiMPRA_(LM)</td><td><b>840</b></td></tr>
-<tr><td><b>32819422</b></td><td>Mele Lab</td><td>HUES64</td><td>plasmidMPRA_(PM)</td><td><b>6954</b></td></tr>
-<tr><td><b>32819422</b></td><td>Mele Lab</td><td>mESC</td><td>plasmidMPRA_(PM)</td><td><b>6954</b></td></tr>
-<tr><td><b>33046894</b></td><td>Shendure Lab</td><td>HepG2</td><td>lentiMPRA_(LM)</td><td><b>8116</b></td></tr>
-<tr><td><b>33046894</b></td><td>Shendure Lab</td><td>HepG2</td><td>plasmidMPRA_(PM)</td><td><b>2228</b></td></tr>
-<tr><td><b>33046894</b></td><td>Shendure Lab</td><td>HepG2</td><td>STARR-seq_(ST)</td><td><b>2230</b></td></tr>
-<tr><td><b>36834916</b></td><td>Kreimer Lab</td><td>NPC</td><td>lentiMPRA_(LM)</td><td><b>3807</b></td></tr>
+<tr><td>27831498</td><td>Inoue et al.</td><td>2017</td><td>Shendure Lab</td><td>HepG2</td><td>lentiMPRA_(LM)</td><td><b>2241</b></td></tr>
+<tr><td>30045748</td><td>Klein et al.</td><td>2018</td><td>Shendure Lab</td><td>HepG2</td><td>STARR-seq_(ST)</td><td><b>7064</b></td></tr>
+<tr><td>32483191</td><td>Choi et al.</td><td>2020</td><td>Brown Lab</td><td>HEK293FT</td><td>lentiMPRA_(LM)</td><td><b>840</b></td></tr>
+<tr><td>32483191</td><td>Choi et al.</td><td>2020</td><td>Brown Lab</td><td>UACC903</td><td>lentiMPRA_(LM)</td><td><b>840</b></td></tr>
+<tr><td>32819422</td><td>Mattioli et al.</td><td>2020</td><td>Mele Lab</td><td>HUES64</td><td>plasmidMPRA_(PM)</td><td><b>6954</b></td></tr>
+<tr><td>32819422</td><td>Mattioli et al.</td><td>2020</td><td>Mele Lab</td><td>mESC</td><td>plasmidMPRA_(PM)</td><td><b>6954</b></td></tr>
+<tr><td>33046894</td><td>Klein et al.</td><td>2020</td><td>Shendure Lab</td><td>HepG2</td><td>lentiMPRA_(LM)</td><td><b>8116</b></td></tr>
+<tr><td>33046894</td><td>Klein et al.</td><td>2020</td><td>Shendure Lab</td><td>HepG2</td><td>plasmidMPRA_(PM)</td><td><b>2228</b></td></tr>
+<tr><td>33046894</td><td>Klein et al.</td><td>2020</td><td>Shendure Lab</td><td>HepG2</td><td>STARR-seq_(ST)</td><td><b>2230</b></td></tr>
+<tr><td>36834916</td><td>Koesterich et al.</td><td>2023</td><td>Kreimer Lab</td><td>NPC</td><td>lentiMPRA_(LM)</td><td><b>3807</b></td></tr>
 
 </table>
-<p>
-In some studies, candidate enhancers were tested using multiple overlapping genomic fragments or reporter constructs of different lengths. As a result, the number of genomic elements represented in the database may exceed the number of candidate enhancers described in the original publication.
-</p>
+
 
 <h2>Credits</h2>
 
